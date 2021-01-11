@@ -1,0 +1,72 @@
+.New__Todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.alert__success {
+    padding: .65em .75em;
+    background-color: #61dafb;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.alert__success button {
+    background-color: #66bfbf;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dedede;
+    box-shadow: 0 0 10px 2px #dedede;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+form > .input__item {
+    margin-top: 20px;
+}
+
+form label {
+    cursor: pointer;
+}
+
+form input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #20232a;
+}
+
+form input:focus {
+    border-color: #61dafb;
+    box-shadow: 0 0 10px 0 #61dafb;
+}
+
+form button {
+    padding: .65em 1.75em;
+    border: 3px solid #61dafb;
+    border-radius: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+form button:hover {
+    background-color: #61dafb;
+    color: #fff;
+}

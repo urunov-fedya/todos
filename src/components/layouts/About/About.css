@@ -1,0 +1,4 @@
+.author__item .links img:nth-child(1n) {
+    width: 32px;
+    margin-left: 10px;
+}
