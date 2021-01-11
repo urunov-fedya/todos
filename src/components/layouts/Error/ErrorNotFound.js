@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Error() {
+export default function ErrorNotFound() {
     return (
         <div className="Error">
             <h1>Page not found</h1>
