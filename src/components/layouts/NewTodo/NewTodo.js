@@ -47,8 +47,7 @@ export default function NewTodo() {
                         id="date"
                         name="date"
                         value={todo.date || ""}
-                        onInput={handleChancge}
-                        placeholder="Новое тудо"/>
+                        onInput={handleChancge}/>
                 </div>
                 <div className="input__item">
                     <button>Ok</button>
