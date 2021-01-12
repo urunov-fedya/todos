@@ -9,8 +9,8 @@ export default function TodoList() {
     
     // сортировка по приоритету
     todos.sort((a, b) => {
-        if (a.priority < b.priority) return 1;
-        if (a.priority > b.priority) return -1;
+        if (+a.priority < +b.priority) return 1;
+        if (+a.priority > +b.priority) return -1;
         return 0;
     });
 
