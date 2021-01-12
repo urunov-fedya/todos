@@ -35,7 +35,7 @@ export default function NewTodo() {
                     <input
                         type="text"
                         id="todo"
-                        name="todo"
+                        name="name"
                         value={todo?.name || ""}
                         onChange={handleChancge}
                         placeholder="Новое тудо"/>

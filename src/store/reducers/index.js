@@ -59,7 +59,7 @@ const reducerChange = (state, action) => {
     
     return {
         ...state,
-        [name]: {...todo, name: value}
+        todo: {...todo, [name]: value}
     }
 };
 
