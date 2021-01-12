@@ -1,9 +1,8 @@
 export const TODOS_SUBMIT = "TODOS_SUBMIT";
 export const TODOS_REMOVE = "TODOS_REMOVE";
 export const TODOS_CHANGE = "TODOS_CHANGE";
+export const TODOS_EDITED = "TODOS_EDITED";
 export const TODOS_DONE = "TODOS_DONE";
-
-
 
 export const submit = () => ({
     type: TODOS_SUBMIT,
@@ -17,6 +16,11 @@ export const change = (name, value) => ({
 
 export const done = (id) => ({
     type: TODOS_DONE,
+    payload: {id}
+});
+
+export const edit = (id) => ({
+    type: TODOS_EDITED,
     payload: {id}
 });
 

@@ -1,17 +1,25 @@
-import React, {useState} from 'react'
-import {change, submit} from "../../../store/actions"
-import {shallowEqual, useSelector, useDispatch} from "react-redux";
+import React, { useState, useRef } from 'react'
+import { change, submit } from "../../../store/actions"
+import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import "./NewTodo.css"
 
 export default function NewTodo() {
     const dispatch = useDispatch();
     const todo = useSelector(state => state.todo, shallowEqual);
     const [done, setDone] = useState(false);
+    const firstInput = useRef(null);
+
+    const handleCloseModal = () => {
+        document.querySelector(".overview").classList.remove("active");
+        document.querySelector(".Modal").classList.remove("active");
+    };
 
     const handleSubmit = evt => {
+        handleCloseModal();
         evt.preventDefault();
         setDone(true);
         dispatch(submit());
+        firstInput.current.focus();
     }
 
     const handleChancge = evt => {
@@ -23,7 +31,7 @@ export default function NewTodo() {
 
     return (
         <div className="New__Todo">
-            {done && (
+            {done && window.location.pathname === "/new" && (
                 <div className="alert__success">
                     Добавлено !
                     <button onClick={handleHide}>&times;</button>
@@ -33,12 +41,14 @@ export default function NewTodo() {
                 <div className="input__item">
                     <label htmlFor="todo">Туду: </label>
                     <input
+                        ref={firstInput}
                         type="text"
                         id="todo"
                         name="name"
                         value={todo?.name || ""}
                         onChange={handleChancge}
-                        placeholder="Новое тудо"/>
+                        placeholder="Новое тудо"
+                        required/>
                 </div>
                 <div className="input__item">
                     <label htmlFor="date">Дата: </label>
@@ -48,7 +58,7 @@ export default function NewTodo() {
                         name="date"
                         value={todo.date || ""}
                         onInput={handleChancge}
-                        placeholder="Новое тудо"/>
+                        required/>
                 </div>
                 <div className="input__item">
                     <label htmlFor="number">Приоритет: </label>
@@ -59,7 +69,8 @@ export default function NewTodo() {
                         min="1"
                         value={todo.priority || ""}
                         onInput={handleChancge}
-                        placeholder="Приоритет"/>
+                        placeholder="Приоритет"
+                        required/>
                 </div>
                 <div className="input__item">
                     <button>Ok</button>

@@ -1,12 +1,13 @@
 import {
     TODOS_SUBMIT,
     TODOS_CHANGE,
+    TODOS_EDITED,
     TODOS_DONE,
     TODOS_REMOVE,
 } from "../actions";
 
-const emty = {
-    id: Date.now(),
+const empty = {
+    id: 0,
     name: '',
     date: '',
     priority: 1,
@@ -15,7 +16,7 @@ const emty = {
 
 export const initialState = {
     todos: [],
-    todo: emty,
+    todo: empty,
     author: {
         name: 'Firdavs',
         surname: 'Urunov',
@@ -37,6 +38,8 @@ export const reducer = (state = initialState, action) => {
             return reducerChange(state, action);
         case TODOS_DONE:
             return reducerDone(state, action);
+        case TODOS_EDITED:
+            return reducerEdit(state, action);
         case TODOS_REMOVE:
             return reducerRemove(state, action);
         default:
@@ -46,13 +49,30 @@ export const reducer = (state = initialState, action) => {
 
 const reducerSubmit = (state, action) => {
     const {todo, todos} = state;
-    return (
-        {
+    const tod = {
+        ...todo,
+        id: todo.id || Date.now()
+    };
+
+    if (todo?.id === 0) {
+        return {
             ...state,
-            todos: [{...todo, id: Date.now()}, ...todos],
-            todo: emty
+            todos: [{...tod}, ...todos],
+            todo: empty
         }
-    )
+        
+    }
+    
+    return {
+        ...state,
+        todos: todos.map(t => {
+            if (t.id !== tod.id) {
+                return t;
+            }
+            return {...tod};
+        }),
+        todo: empty,
+    };
 };
 
 const reducerChange = (state, action) => {
@@ -81,6 +101,24 @@ const reducerDone = (state, action) => {
             }
             return t;
         })
+    }
+};
+
+const reducerEdit = (state, action) => {
+    const {todos, todo} = state;
+    const { payload : {id} } = action;
+    const tod = todos.find(t => t.id === id);
+
+    if (tod === undefined) {
+        return {...state};
+    }
+    
+    return {
+        ...state,
+        todo: {
+            ...todo,
+            ...tod
+        }
     }
 };
 
