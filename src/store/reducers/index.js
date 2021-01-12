@@ -8,6 +8,7 @@ import {
 const emty = {
     id: Date.now(),
     name: '',
+    date: '',
     done: false
 };
 

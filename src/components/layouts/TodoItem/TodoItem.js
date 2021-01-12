@@ -8,7 +8,7 @@ export default function TodoItem({todo, index}) {
     const state = useSelector(state => state, shallowEqual);
     
     const dispatch = useDispatch();
-    const {name} = todo;
+    const {name, date} = todo;
 
     const handleDone = () => {
         dispatch(done(todo.id));
@@ -35,6 +35,9 @@ export default function TodoItem({todo, index}) {
                         type="checkbox"
                         id={`check-${todo.id}`}/>
                     <div className="todo__name">{name}</div>
+                </div>
+                <div className="todo__date">
+                    {date}
                 </div>
                 <button
                     className="todo__remove"

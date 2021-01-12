@@ -41,6 +41,16 @@ export default function NewTodo() {
                         placeholder="Новое тудо"/>
                 </div>
                 <div className="input__item">
+                    <label htmlFor="date">Дата: </label>
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        value={todo.date || ""}
+                        onInput={handleChancge}
+                        placeholder="Новое тудо"/>
+                </div>
+                <div className="input__item">
                     <button>Ok</button>
                 </div>
             </form>
