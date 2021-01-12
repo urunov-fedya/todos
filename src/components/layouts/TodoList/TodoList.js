@@ -1,5 +1,5 @@
 import React from 'react'
-import {useSelector, shallowEqual} from 'react-redux'
+import { useSelector, shallowEqual } from 'react-redux'
 import TodoItem  from '../TodoItem/TodoItem'
 
 import "./TodoList.css";
@@ -15,6 +15,7 @@ export default function TodoList() {
     });
 
     return (
+        <>
         <div className="TodoList">
             <div className="todos__content">
                 <ul>
@@ -22,5 +23,6 @@ export default function TodoList() {
                 </ul>
             </div>
         </div>
+        </>
     )
 }

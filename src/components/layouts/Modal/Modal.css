@@ -1,0 +1,29 @@
+.Modal {
+    background-color: #fff;
+    border-radius: 5px;
+    position: fixed;
+    top: -200%;
+    left: 25%;
+    width: 50%;
+    height: 300px;
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+    z-index: 100 !important;
+}
+
+.Modal.active {
+    top: 20%;
+}
+
+.Modal form {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+}
+
+.Modal .modal__header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}

@@ -21,3 +21,21 @@
 a {
   text-decoration: none;
 }
+
+.btn__close {
+  border: 3px solid #61dafb;
+  background-color: transparent;
+  padding: .65em .75em;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all .5s;
+}
+
+.btn__close:hover {
+  background-color: #61dafb;
+  color: #fff;
+}

@@ -1,24 +1,26 @@
 import React from 'react'
-import { shallowEqual, useDispatch, useSelector } from 'react-redux'
-import { done, remove } from '../../../store/actions'
+import { useDispatch } from 'react-redux'
+import { done, edit, remove } from '../../../store/actions'
 
 import "./TodoItem.css"
 
 export default function TodoItem({todo, index}) {
-    const state = useSelector(state => state, shallowEqual);
-    
     const dispatch = useDispatch();
+
     const {name, date, priority} = todo;
 
     const handleDone = () => {
         dispatch(done(todo.id));
-        console.log(todo.id)
     }
     
+    const handleEdit = () => {
+        document.querySelector(".overview").classList.toggle("active");
+        document.querySelector(".Modal").classList.toggle("active");
+        dispatch(edit(todo.id))
+    };
+
     const handleRemove = () => {
         dispatch(remove(todo.id));
-        console.log(todo.id)
-        localStorage.setItem("state", JSON.stringify(state))
     }
 
     return (
@@ -42,11 +44,18 @@ export default function TodoItem({todo, index}) {
                 <div className="todo__priority">
                     {priority}
                 </div>
-                <button
-                    className="todo__remove"
-                    onClick={handleRemove}>
-                    &times;
-                </button>
+                <div className="todo__func">
+                    <button
+                        className="todo__edit"
+                        onClick={handleEdit}>
+                        &#9998;
+                    </button>
+                    <button
+                        className="btn__close"
+                        onClick={handleRemove}>
+                        &times;
+                    </button>
+                </div>
             </label>
         </li>
     )

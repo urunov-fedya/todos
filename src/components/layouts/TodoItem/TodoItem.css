@@ -28,7 +28,8 @@ li.todo label.done .todo__name {
     text-decoration: line-through;
 }
 
-li.todo label .todo__remove {
+li.todo label button {
+    margin-left: 10px;
     border: 3px solid #61dafb;
     background-color: transparent;
     padding: .65em .75em;
@@ -41,7 +42,7 @@ li.todo label .todo__remove {
     transition: all .5s;
 }
 
-li.todo label .todo__remove:hover {
+li.todo label button:hover {
     background-color: #61dafb;
     color: #fff
 }

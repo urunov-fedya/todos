@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Header.css";
+import Modal from '../layouts/Modal/Modal';
 
 import {
   BrowserRouter as Router,
@@ -54,6 +55,8 @@ function Header() {
           <Route component={Error} />
           </Switch>
         </div>
+        <div className="overview"></div>
+        <Modal />
       </Router>
     </>
   );
