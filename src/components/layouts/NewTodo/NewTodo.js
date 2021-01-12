@@ -51,6 +51,17 @@ export default function NewTodo() {
                         placeholder="Новое тудо"/>
                 </div>
                 <div className="input__item">
+                    <label htmlFor="number">Приоритет: </label>
+                    <input
+                        type="number"
+                        id="number"
+                        name="priority"
+                        min="1"
+                        value={todo.priority || ""}
+                        onInput={handleChancge}
+                        placeholder="Приоритет"/>
+                </div>
+                <div className="input__item">
                     <button>Ok</button>
                 </div>
             </form>

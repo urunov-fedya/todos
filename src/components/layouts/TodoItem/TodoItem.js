@@ -8,7 +8,7 @@ export default function TodoItem({todo, index}) {
     const state = useSelector(state => state, shallowEqual);
     
     const dispatch = useDispatch();
-    const {name, date} = todo;
+    const {name, date, priority} = todo;
 
     const handleDone = () => {
         dispatch(done(todo.id));
@@ -38,6 +38,9 @@ export default function TodoItem({todo, index}) {
                 </div>
                 <div className="todo__date">
                     {date}
+                </div>
+                <div className="todo__priority">
+                    {priority}
                 </div>
                 <button
                     className="todo__remove"
