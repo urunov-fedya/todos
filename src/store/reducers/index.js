@@ -9,6 +9,7 @@ const emty = {
     id: Date.now(),
     name: '',
     date: '',
+    priority: 1,
     done: false
 };
 

@@ -7,6 +7,13 @@ import "./TodoList.css";
 export default function TodoList() {
     const todos = useSelector(state => state.todos, shallowEqual);
     
+    // сортировка по приоритету
+    todos.sort((a, b) => {
+        if (a.priority < b.priority) return 1;
+        if (a.priority > b.priority) return -1;
+        return 0;
+    });
+
     return (
         <div className="TodoList">
             <div className="todos__content">
