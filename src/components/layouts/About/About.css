@@ -1,4 +1,38 @@
-.author__item .links img:nth-child(1n) {
+.author__container {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.author__item {
+    width: 130px;
+}
+
+.author__item > img {
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.author__item > img:hover {
+    transform: scale(1.1);
+}
+
+.author__item .links img:nth-child(1) {
     width: 32px;
-    margin-left: 10px;
+}
+
+.author__item .links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.author__item .links a {
+    transition: transform .5s;
+}
+
+.author__item .links a:hover {
+    transform: translateY(-10px);
 }

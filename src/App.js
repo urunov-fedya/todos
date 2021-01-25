@@ -8,7 +8,7 @@ import "./App.css";
 
 /*
   Фидбэки: почему ErrorBoundary работает не правильно
-          как правильно работать с localStorage + redux
+           как правильно работать с localStorage + redux
   Ответы: ...
 */
 

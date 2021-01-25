@@ -20,8 +20,8 @@ export const initialState = {
     author: {
         name: 'Firdavs',
         surname: 'Urunov',
-        job: 'JS Devaloper',
-        img: 'https://media-exp1.licdn.com/dms/image/C4D03AQG_KR320nVXZw/profile-displayphoto-shrink_100_100/0/1600845119411?e=1616025600&v=beta&t=D6hhSf4cfDmt0uIoTGvc0hfTksZdnp3ZUrKeuqSd-Wg',
+        job: 'JS Developer',
+        img: 'https://cdn4.telesco.pe/file/fqFYd2wHeyg5SqdFc9DpD6VVFL2fYzUG-GMEkprzwIyh6PAT_cYMSXngnasL7RZ0M5biJ5uJzP09XH1hUktxhuaua_oipiGeMHGvUCX7pwNaVKL4UHcoQ0BfjIua_HV7VTSpvpBRK3BWNqTHoqiu0hlZjnm0LtBLqzwGtNN0-pERdRYI9HohD4Auu-BzRBafN8NjbJszvqvgf5Cm55KrLOpv_HNqOIg9-lfo7TwyDKyDm4PLonzaaR8Y4NA-Cpiiif1IpRIgQnpvd7nM9I0xbGtoNrEjvyt2DHJfBT6tXzRHtK-VRdw3_nLieVI6GgnIsvQ8dtiBkr2cXp3uLOCYIA.jpg',
         links: {
             github: 'http://github.com/Firdavs2002/',
             linkedin: 'https://www.linkedin.com/in/urunov/',
