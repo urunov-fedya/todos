@@ -2,6 +2,7 @@ import {
     TODOS_SUBMIT,
     TODOS_CHANGE,
     TODOS_EDITED,
+    TODOS_SAVE,
     TODOS_DONE,
     TODOS_REMOVE,
 } from "../actions";
@@ -36,6 +37,8 @@ export const reducer = (state = initialState, action) => {
             return reducerSubmit(state, action);
         case TODOS_CHANGE:
             return reducerChange(state, action);
+        case TODOS_SAVE:
+            return reducerSave(state, action);
         case TODOS_DONE:
             return reducerDone(state, action);
         case TODOS_EDITED:
@@ -103,6 +106,15 @@ const reducerDone = (state, action) => {
         })
     }
 };
+
+const reducerSave = (state, action) => {
+    const {payload: { value }} = action;
+
+    return {
+        ...state,
+        todos: value
+    }
+}
 
 const reducerEdit = (state, action) => {
     const {todos, todo} = state;
